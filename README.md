@@ -3,7 +3,7 @@ A Queuing library for the PHP FatFreeFramework
 
 # Examples of usage
 `$que = \Que::instance();
-while($job_id = $que->reserve('jobs')) $que->complete($job_id, perform_task( $job_id ) );    `
+while($job_id = $que->reserve('jobs')) $que->complete($job_id, perform_task( $que->data ( $job_id ) ) );    `
 
 # Public Methods
 
@@ -27,6 +27,8 @@ This would call your script to eat on the que. The contents of the que eating sc
 `size ( channel )` - Returns the number of jobs waiting in the channel
 
 `complete ( job_id , clear )` - marks a job as completed, if clear is true then it will remove the job from the que, otherwise it will be left in the que to be redone at a later date.
+
+`data ( job_id )` - returns data for a specific job
 
 `all ( channel )` - return all jobs in a channel
 
