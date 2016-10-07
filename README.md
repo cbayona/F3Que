@@ -20,7 +20,7 @@ This would call your script to eat on the que. The contents of the que eating sc
 
 `reserve ( channel )` - Pulls a job out of a que rotation and returns its job_id. 
 
-`add ( channel, data )` - Adds a job containing <data> into the que channel <channel>
+`add ( channel, data )` - Adds a job containing *data* into the que channel *channel*
 
 `unreserve ( job_id )` - Removes the reservation of a reserved job. Good for rolling back jobs
 
